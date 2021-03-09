@@ -11,7 +11,8 @@ public class line {
 		double y1 = 0;
 		double x2 = 0;
 		double y2 = 0;
-		double length = 0;
+		double length1 = 0;
+		double length2 = 0;
 		System.out.println("Please enter X1 coordinate: ");
 		x1 = scan.nextInt();
 		System.out.println("Please enter Y1 coordinate: ");
@@ -20,8 +21,8 @@ public class line {
 		x2 = scan.nextInt();
 		System.out.println("Please enter Y2 coordinate: ");
 		y2 = scan.nextInt();
-		length = Math.sqrt(Math.pow(x2-x1, 2) + (Math.pow(y2-y1, 2)));
-		System.out.println("The Length of line is" + (length));
+		length1 = Math.sqrt(Math.pow(x2-x1, 2) + (Math.pow(y2-y1, 2)));
+		System.out.println("The Length of line1 is " + (length1));
 		
 		double r1 = 0;
 		double s1 = 0;
@@ -35,12 +36,14 @@ public class line {
 		r2 = scan.nextInt();
 		System.out.println("Please enter S2 coordinate: ");
 		s2 = scan.nextInt();
+		length2 = Math.sqrt(Math.pow(r2-r1, 2) + (Math.pow(s2-s1, 2)));
+		System.out.println("The Length of line2 is " + (length2));
 		scan.close();
 		double a1[]= {x1,y1,x2,y2};
 		double a2[]= {r1,s1,r2,s2};
 		boolean status=true;
-		if(a1.length == a2.length)
-		{
+		if(length1 == length2){
+			System.out.println("lengths are Equal");
 			for(int i=0;i<a1.length;i++)
 			{
 				if(a1[i] !=a2[i])
@@ -48,18 +51,18 @@ public class line {
 					status=false;
 				}
 			}
+			if(status==true)
+			{
+			System.out.println("Points are equal");	
+			}
+		}else if(length1 > length2) {
+			System.out.println("length of 1st line is greater than 2nd line");
 		}
 		else
 		{
+			System.out.println("length of 1st line is less than 2nd line");
 			status=false;
 		}
-		if(status==true)
-		{
-			System.out.println("lengths are Equal");
-		}
-		else
-		{
-			System.out.println("lengths are NOT equal");
-		}
+		
 	}
 }
