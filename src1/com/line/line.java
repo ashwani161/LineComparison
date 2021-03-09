@@ -28,13 +28,13 @@ public class line {
 		double r2 = 0;
 		double s2 = 0;
 		System.out.println("Please enter R1 coordinate: ");
-		x1 = scan.nextInt();
+		r1 = scan.nextInt();
 		System.out.println("Please enter S1 coordinate: ");
-		y1 = scan.nextInt();
+		s1 = scan.nextInt();
 		System.out.println("Please enter R2 coordinate: ");
-		x2 = scan.nextInt();
+		r2 = scan.nextInt();
 		System.out.println("Please enter S2 coordinate: ");
-		y2 = scan.nextInt();
+		s2 = scan.nextInt();
 		scan.close();
 		double a1[]= {x1,y1,x2,y2};
 		double a2[]= {r1,s1,r2,s2};
