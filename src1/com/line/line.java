@@ -1,18 +1,15 @@
 package com.line;
+
 import java.util.Scanner;
-import java.util.Arrays;
+
 public class line {
-	public static void main(String args[]) {
-		System.out.println("Welcome to Line");
-		System.out.println("Comparison Computation");
-		System.out.println("Program on Master Branch");
+	public double x1, x2, y1, y2, r1, r2, s1, s2, Length1, Length2;
+
+	public void Length1() {
 		Scanner scan = new Scanner(System.in);
-		double x1 = 0;
-		double y1 = 0;
-		double x2 = 0;
-		double y2 = 0;
-		double length1 = 0;
-		double length2 = 0;
+		System.out.println("Enter the values for Line 1");
+		System.out.println("Enter the value of x1");
+		// taking input from user for x1,x2,y1,y2 of Line1
 		System.out.println("Please enter X1 coordinate: ");
 		x1 = scan.nextInt();
 		System.out.println("Please enter Y1 coordinate: ");
@@ -21,48 +18,32 @@ public class line {
 		x2 = scan.nextInt();
 		System.out.println("Please enter Y2 coordinate: ");
 		y2 = scan.nextInt();
-		length1 = Math.sqrt(Math.pow(x2-x1, 2) + (Math.pow(y2-y1, 2)));
-		System.out.println("The Length of line1 is " + (length1));
-		
-		double r1 = 0;
-		double s1 = 0;
-		double r2 = 0;
-		double s2 = 0;
-		System.out.println("Please enter R1 coordinate: ");
+		Length1 = Math.sqrt(Math.pow(x2 - x1, 2) + (Math.pow(y2 - y1, 2)));
+		System.out.println("The Length of line1 is " + (Length1));
+
+		System.out.println("Enter the values for Line 2");
+		// taking input from user for r1,r2,s1,s2 of Line2
+		System.out.println("Enter the value of R1 coordinate");
 		r1 = scan.nextInt();
-		System.out.println("Please enter S1 coordinate: ");
-		s1 = scan.nextInt();
-		System.out.println("Please enter R2 coordinate: ");
+		System.out.println("Enter the value of R2 coordinate");
 		r2 = scan.nextInt();
-		System.out.println("Please enter S2 coordinate: ");
+		System.out.println("Enter the value of S1 coordinate");
+		s1 = scan.nextInt();
+		System.out.println("Enter the value of S2 coordinate");
 		s2 = scan.nextInt();
-		length2 = Math.sqrt(Math.pow(r2-r1, 2) + (Math.pow(s2-s1, 2)));
-		System.out.println("The Length of line2 is " + (length2));
-		scan.close();
-		double a1[]= {x1,y1,x2,y2};
-		double a2[]= {r1,s1,r2,s2};
-		boolean status=true;
-		if(length1 == length2){
-			System.out.println("lengths are Equal");
-			for(int i=0;i<a1.length;i++)
-			{
-				if(a1[i] !=a2[i])
-				{
-					status=false;
-				}
-			}
-			if(status==true)
-			{
-			System.out.println("Points are equal");	
-			}
-		}else if(length1 > length2) {
-			System.out.println("length of 1st line is greater than 2nd line");
-		}
-		else
-		{
-			System.out.println("length of 1st line is less than 2nd line");
-			status=false;
-		}
-		
+
+		Length2 = Math.sqrt((Math.pow((r2 - r1), 2)) + (Math.pow((s2 - s1), 2)));
+		System.out.println("Length of Line 2: " + Length2);
+
+		String s1 = Double.toString(Length1);
+		String s2 = Double.toString(Length2);
+		System.out.println("equality of two lines using Equal method " + s1.equals(s2));
+		System.out.println("equality of two lines using CompareTo method " + s1.compareTo(s2));
+	}
+
+	public static void main(String args[]) {
+		line lineobj1 = new line();
+		lineobj1.Length1();
+
 	}
 }
